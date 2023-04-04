@@ -1,0 +1,87 @@
+import pandas as pd
+
+CO2 = pd.read_csv('/content/CO2_emission.csv')
+
+CO2
+
+CO2.duplicated()
+
+#import pandas
+import pandas as pd
+
+
+#read the csv file
+df = pd.read_csv('/content/CO2_emission.csv')
+list = ['model_year' , 'Unnamed: 15' , 'Unnamed: 16' , 'Unnamed: 17']
+
+df = df.drop(list,axis = 1)
+df.head()
+
+df=pd.DataFrame(df)
+df.head()
+
+#check for duplicate rows
+duplicates = df[df.duplicated()]
+
+#remove the duplicates
+df.drop_duplicates(inplace=True)
+
+#write the result to a new csv file
+df.to_csv('/content/MY2017-2023-Fuel-Consumption-Ratings_Without Duplicates.csv')
+
+
+
+
+#dataframe shape
+df.shape
+
+#dataframe shape
+df = pd.read_csv('/content/MY2017-2023-Fuel-Consumption-Ratings_Without Duplicates.csv')
+
+#get shape
+df.shape
+
+#get length of the column
+len(df.columns)
+
+#to find data types
+df.dtypes
+
+# convert to pandas dataframe 
+df = pd.DataFrame(df)
+
+# get unique values 
+df['name'].unique()
+
+df['model'].unique()
+
+
+
+#Value count
+df['name'].value_counts()
+
+df.describe()
+
+# Categorical Descriptive Statistics
+df.describe(include=['object'])
+
+#finding null values
+null_values = df[df.isnull().any(axis=1)]
+
+#printing null values
+print(null_values)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
